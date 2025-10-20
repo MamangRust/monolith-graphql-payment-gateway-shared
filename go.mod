@@ -4,7 +4,6 @@ go 1.25.1
 
 require (
 	github.com/MamangRust/monolith-graphql-payment-gateway-pkg v0.2.0
-	github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.0.1
 	github.com/go-playground/validator/v10 v10.28.0
 	github.com/labstack/echo/v4 v4.13.4
 	github.com/prometheus/client_golang v1.23.2
@@ -17,6 +16,7 @@ require (
 )
 
 require (
+	github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.2 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect

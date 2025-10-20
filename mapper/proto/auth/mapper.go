@@ -1,9 +1,9 @@
 package authprotomapper
 
 import (
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbuser "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
-	pb "github.com/MamangRust/monolith-payment-gateway-pb/auth"
-	pbuser "github.com/MamangRust/monolith-payment-gateway-pb/user"
 )
 
 type authProtoMapper struct {

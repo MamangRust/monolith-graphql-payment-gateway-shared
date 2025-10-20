@@ -1,8 +1,8 @@
 package transferprotomapper
 
 import (
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
-	pb "github.com/MamangRust/monolith-payment-gateway-pb/transfer"
 )
 
 // TransferStatsAmountProtoMapper is responsible for mapping Transfer responses to their corresponding protobuf representations.

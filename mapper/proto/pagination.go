@@ -1,6 +1,6 @@
 package protomapper
 
-import pb "github.com/MamangRust/monolith-payment-gateway-pb"
+import pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 
 // mapPaginationMeta maps a sharedPagination.PaginationMeta to a protobuf PaginationMeta.
 //

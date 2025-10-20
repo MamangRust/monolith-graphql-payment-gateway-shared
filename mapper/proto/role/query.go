@@ -1,10 +1,10 @@
 package roleprotomapper
 
 import (
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
-	pbhelpers "github.com/MamangRust/monolith-payment-gateway-pb"
-	pb "github.com/MamangRust/monolith-payment-gateway-pb/role"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )
 

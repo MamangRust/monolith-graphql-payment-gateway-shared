@@ -1,9 +1,9 @@
 package merchantprotomapper
 
 import (
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	helpersproto "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto/helpers"
-	pb "github.com/MamangRust/monolith-payment-gateway-pb/merchant"
 )
 
 type merchantCommandProtoMapper struct{}

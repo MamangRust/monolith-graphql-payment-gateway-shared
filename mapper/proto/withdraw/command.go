@@ -1,8 +1,8 @@
 package withdrawprotomapper
 
 import (
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
-	pb "github.com/MamangRust/monolith-payment-gateway-pb/withdraw"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )
 
