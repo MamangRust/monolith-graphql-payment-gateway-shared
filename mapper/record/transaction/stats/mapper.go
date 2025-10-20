@@ -1,0 +1,21 @@
+package transactionstatsrecordmapper
+
+type TransactonStatisticsRecordMapper interface {
+	TransactionStatisticStatusRecordMapper
+	TransactionStatisticAmountRecordMapper
+	TransactionStatisticMethodRecordMapper
+}
+
+type transactionStatisticsRecordMapper struct {
+	TransactionStatisticStatusRecordMapper
+	TransactionStatisticAmountRecordMapper
+	TransactionStatisticMethodRecordMapper
+}
+
+func NewTransactionStatisticsRecordMapper() TransactonStatisticsRecordMapper {
+	return &transactionStatisticsRecordMapper{
+		TransactionStatisticStatusRecordMapper: NewTransactionStatisticStatusRecordMapper(),
+		TransactionStatisticAmountRecordMapper: NewTransactionStatisticAmountRecordMapper(),
+		TransactionStatisticMethodRecordMapper: NewTransactionStatisticMethodRecordMapper(),
+	}
+}
