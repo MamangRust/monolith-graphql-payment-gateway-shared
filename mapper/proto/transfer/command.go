@@ -31,8 +31,8 @@ func (m *transferCommandProtoMapper) ToProtoResponseTransfer(status string, mess
 	}
 }
 
-func (m *transferCommandProtoMapper) ToProtoResponseTransferDeleteAt(status string, message string, pbResponse *response.TransferResponseDeleteAt) *pb.ApiResponseTransferDeleteAt {
-	return &pb.ApiResponseTransferDeleteAt{
+func (m *transferCommandProtoMapper) ToProtoResponseTransferDeleteAt(status string, message string, pbResponse *response.TransferResponseDeleteAt) *pb.ApIResponseTransferDeleteAt {
+	return &pb.ApIResponseTransferDeleteAt{
 		Status:  status,
 		Message: message,
 		Data:    m.mapResponseTransferDeleteAt(pbResponse),

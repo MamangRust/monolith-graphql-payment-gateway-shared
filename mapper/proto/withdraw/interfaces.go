@@ -24,7 +24,7 @@ type WithdrawQueryProtoMapper interface {
 type WithdrawCommandProtoMapper interface {
 	WithdrawBaseProtoMapper
 
-	ToProtoResponseWithdrawDeleteAt(status string, message string, withdraw *response.WithdrawResponseDeleteAt) *pb.ApiResponseWithdrawDeleteAt
+	ToProtoResponseWithdrawDeleteAt(status string, message string, withdraw *response.WithdrawResponseDeleteAt) *pb.ApIResponseWithdrawDeleteAt
 
 	// ToProtoResponseWithdrawDelete returns a response indicating a withdraw has been deleted.
 	ToProtoResponseWithdrawDelete(status string, message string) *pb.ApiResponseWithdrawDelete

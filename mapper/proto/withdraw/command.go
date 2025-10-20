@@ -32,8 +32,8 @@ func (m *withdrawCommandProtoMapper) ToProtoResponseWithdraw(status string, mess
 	}
 }
 
-func (m *withdrawCommandProtoMapper) ToProtoResponseWithdrawDeleteAt(status string, message string, withdraw *response.WithdrawResponseDeleteAt) *pb.ApiResponseWithdrawDeleteAt {
-	return &pb.ApiResponseWithdrawDeleteAt{
+func (m *withdrawCommandProtoMapper) ToProtoResponseWithdrawDeleteAt(status string, message string, withdraw *response.WithdrawResponseDeleteAt) *pb.ApIResponseWithdrawDeleteAt {
+	return &pb.ApIResponseWithdrawDeleteAt{
 		Status:  status,
 		Message: message,
 		Data:    m.mapResponseWithdrawalDeleteAt(withdraw),

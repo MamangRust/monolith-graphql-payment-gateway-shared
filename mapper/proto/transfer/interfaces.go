@@ -26,7 +26,7 @@ type TransferQueryProtoMapper interface {
 type TransferCommandProtoMapper interface {
 	TransferBaseProtoMapper
 
-	ToProtoResponseTransferDeleteAt(status string, message string, pbResponse *response.TransferResponseDeleteAt) *pb.ApiResponseTransferDeleteAt
+	ToProtoResponseTransferDeleteAt(status string, message string, pbResponse *response.TransferResponseDeleteAt) *pb.ApIResponseTransferDeleteAt
 
 	// ToProtoResponseTransferDelete returns a response indicating a transfer has been deleted.
 	ToProtoResponseTransferDelete(status string, message string) *pb.ApiResponseTransferDelete
