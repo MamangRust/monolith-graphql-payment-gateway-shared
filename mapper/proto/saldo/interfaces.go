@@ -1,8 +1,9 @@
 package saldoprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/saldo"
+	pbStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/saldo/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -35,16 +36,16 @@ type SaldoCommandProtoMapper interface {
 
 type SaldoStatsTotalSaldoProtoMapper interface {
 	// ToProtoResponseMonthTotalSaldo maps monthly total saldo to a protobuf response.
-	ToProtoResponseMonthTotalSaldo(status string, message string, pbResponse []*response.SaldoMonthTotalBalanceResponse) *pb.ApiResponseMonthTotalSaldo
+	ToProtoResponseMonthTotalSaldo(status string, message string, pbResponse []*response.SaldoMonthTotalBalanceResponse) *pbStats.ApiResponseMonthTotalSaldo
 
 	// ToProtoResponseYearTotalSaldo maps yearly total saldo to a protobuf response.
-	ToProtoResponseYearTotalSaldo(status string, message string, pbResponse []*response.SaldoYearTotalBalanceResponse) *pb.ApiResponseYearTotalSaldo
+	ToProtoResponseYearTotalSaldo(status string, message string, pbResponse []*response.SaldoYearTotalBalanceResponse) *pbStats.ApiResponseYearTotalSaldo
 }
 
 type SaldoStatsBalanceProtoMapper interface {
 	// ToProtoResponseMonthSaldoBalances maps monthly saldo balances to a protobuf response.
-	ToProtoResponseMonthSaldoBalances(status string, message string, pbResponse []*response.SaldoMonthBalanceResponse) *pb.ApiResponseMonthSaldoBalances
+	ToProtoResponseMonthSaldoBalances(status string, message string, pbResponse []*response.SaldoMonthBalanceResponse) *pbStats.ApiResponseMonthSaldoBalances
 
 	// ToProtoResponseYearSaldoBalances maps yearly saldo balances to a protobuf response.
-	ToProtoResponseYearSaldoBalances(status string, message string, pbResponse []*response.SaldoYearBalanceResponse) *pb.ApiResponseYearSaldoBalances
+	ToProtoResponseYearSaldoBalances(status string, message string, pbResponse []*response.SaldoYearBalanceResponse) *pbStats.ApiResponseYearSaldoBalances
 }

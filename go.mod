@@ -16,7 +16,7 @@ require (
 )
 
 require (
-	github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.2
+	github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.3
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect

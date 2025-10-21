@@ -1,8 +1,8 @@
 package merchantdocumentprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant_document"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 

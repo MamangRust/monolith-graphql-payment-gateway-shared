@@ -1,8 +1,8 @@
 package transactionprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transaction"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -62,10 +62,10 @@ func (m *transactonQueryProtoMapper) ToProtoResponseTransactions(status string, 
 func (m *transactonQueryProtoMapper) ToProtoResponsePaginationTransaction(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.TransactionResponse) *pb.ApiResponsePaginationTransaction {
 
 	return &pb.ApiResponsePaginationTransaction{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesTransaction(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesTransaction(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -76,10 +76,10 @@ func (m *transactonQueryProtoMapper) ToProtoResponsePaginationTransaction(pagina
 func (m *transactonQueryProtoMapper) ToProtoResponsePaginationTransactionDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.TransactionResponseDeleteAt) *pb.ApiResponsePaginationTransactionDeleteAt {
 
 	return &pb.ApiResponsePaginationTransactionDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesTransactionDeleteAt(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesTransactionDeleteAt(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

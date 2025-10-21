@@ -1,7 +1,7 @@
 package transactionprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transaction/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 

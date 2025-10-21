@@ -1,8 +1,8 @@
 package merchantprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 )
@@ -21,10 +21,10 @@ func NewMerchantTransactionProtoMapper() MerchantTransactionProtoMapper {
 func (m *merchantTransactionProtoMapper) ToProtoResponsePaginationMerchantTransaction(pagination *pbhelpers.PaginationMeta, status string, message string, merchants []*response.MerchantTransactionResponse) *pb.ApiResponsePaginationMerchantTransaction {
 
 	return &pb.ApiResponsePaginationMerchantTransaction{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapMerchantTransactionResponses(merchants),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapMerchantTransactionResponses(merchants),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -46,7 +46,6 @@ func (m *merchantTransactionProtoMapper) mapMerchantTransactionResponse(merchant
 }
 
 // mapMerchantTransactionResponses maps a list of *response.MerchantTransactionResponse to a list of
-// *pb.MerchantTransactionResponse proto responses.
 //
 // It iterates over each MerchantTransactionResponse in the input slice, converting
 // them to their protobuf equivalent using the mapMerchantTransactionResponse function.

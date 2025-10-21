@@ -1,8 +1,8 @@
 package merchantdocumentprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant_document"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -50,10 +50,10 @@ func (m *merchantDocumentQueryProtoMapper) ToProtoResponseMerchantDocument(statu
 //	A pointer to ApiResponsePaginationMerchantDocument containing the status, message, document data, and pagination data.
 func (m *merchantDocumentQueryProtoMapper) ToProtoResponsePaginationMerchantDocument(pagination *pbhelpers.PaginationMeta, status string, message string, docs []*response.MerchantDocumentResponse) *pb.ApiResponsePaginationMerchantDocument {
 	return &pb.ApiResponsePaginationMerchantDocument{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapMerchantDocuments(docs),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapMerchantDocuments(docs),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -71,10 +71,10 @@ func (m *merchantDocumentQueryProtoMapper) ToProtoResponsePaginationMerchantDocu
 //	A pointer to ApiResponsePaginationMerchantDocumentAt containing the status, message, document data, and pagination data.
 func (m *merchantDocumentQueryProtoMapper) ToProtoResponsePaginationMerchantDocumentDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, docs []*response.MerchantDocumentResponseDeleteAt) *pb.ApiResponsePaginationMerchantDocumentAt {
 	return &pb.ApiResponsePaginationMerchantDocumentAt{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapMerchantDocumentsDeleteAt(docs),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapMerchantDocumentsDeleteAt(docs),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

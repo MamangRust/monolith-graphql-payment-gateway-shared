@@ -1,7 +1,7 @@
 package withdrawprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/withdraw/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 

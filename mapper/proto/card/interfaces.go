@@ -1,8 +1,9 @@
 package cardprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/card"
+	pbCardStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/card/stats"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -42,10 +43,10 @@ type CardDashboardProtoMapper interface {
 
 type CardStatsBalanceProtoMapper interface {
 	// ToProtoResponseMonthlyBalances maps monthly card balances to a protobuf message.
-	ToProtoResponseMonthlyBalances(status string, message string, cards []*response.CardResponseMonthBalance) *pb.ApiResponseMonthlyBalance
+	ToProtoResponseMonthlyBalances(status string, message string, cards []*response.CardResponseMonthBalance) *pbCardStats.ApiResponseMonthlyBalance
 
 	// ToProtoResponseYearlyBalances maps yearly card balances to a protobuf message.
-	ToProtoResponseYearlyBalances(status string, message string, cards []*response.CardResponseYearlyBalance) *pb.ApiResponseYearlyBalance
+	ToProtoResponseYearlyBalances(status string, message string, cards []*response.CardResponseYearlyBalance) *pbCardStats.ApiResponseYearlyBalance
 }
 
 type CardStatsAmountProtoMapper interface {

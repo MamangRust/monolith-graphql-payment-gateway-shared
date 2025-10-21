@@ -1,8 +1,8 @@
 package transferprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transfer"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -64,10 +64,10 @@ func (m *transferQueryProtoMapper) ToProtoResponseTransfers(status string, messa
 //   - A pointer to an ApiResponsePaginationTransfer containing the mapped data.
 func (m *transferQueryProtoMapper) ToProtoResponsePaginationTransfer(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.TransferResponse) *pb.ApiResponsePaginationTransfer {
 	return &pb.ApiResponsePaginationTransfer{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesTransfer(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesTransfer(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -83,10 +83,10 @@ func (m *transferQueryProtoMapper) ToProtoResponsePaginationTransfer(pagination 
 //   - A pointer to an ApiResponsePaginationTransferDeleteAt containing the status, message, transfer data, and pagination data.
 func (m *transferQueryProtoMapper) ToProtoResponsePaginationTransferDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.TransferResponseDeleteAt) *pb.ApiResponsePaginationTransferDeleteAt {
 	return &pb.ApiResponsePaginationTransferDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesTransferDeleteAt(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesTransferDeleteAt(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

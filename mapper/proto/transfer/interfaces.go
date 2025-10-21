@@ -1,8 +1,9 @@
 package transferprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transfer"
+	pbStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transfer/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -36,19 +37,19 @@ type TransferCommandProtoMapper interface {
 
 type TransferStatsStatusProtoMapper interface {
 	// ToProtoResponseTransferMonthStatusSuccess maps monthly successful transfers to a protobuf response.
-	ToProtoResponseTransferMonthStatusSuccess(status string, message string, pbResponse []*response.TransferResponseMonthStatusSuccess) *pb.ApiResponseTransferMonthStatusSuccess
+	ToProtoResponseTransferMonthStatusSuccess(status string, message string, pbResponse []*response.TransferResponseMonthStatusSuccess) *pbStats.ApiResponseTransferMonthStatusSuccess
 	// ToProtoResponseTransferYearStatusSuccess maps yearly successful transfers to a protobuf response.
-	ToProtoResponseTransferYearStatusSuccess(status string, message string, pbResponse []*response.TransferResponseYearStatusSuccess) *pb.ApiResponseTransferYearStatusSuccess
+	ToProtoResponseTransferYearStatusSuccess(status string, message string, pbResponse []*response.TransferResponseYearStatusSuccess) *pbStats.ApiResponseTransferYearStatusSuccess
 	// ToProtoResponseTransferMonthStatusFailed maps monthly failed transfers to a protobuf response.
-	ToProtoResponseTransferMonthStatusFailed(status string, message string, pbResponse []*response.TransferResponseMonthStatusFailed) *pb.ApiResponseTransferMonthStatusFailed
+	ToProtoResponseTransferMonthStatusFailed(status string, message string, pbResponse []*response.TransferResponseMonthStatusFailed) *pbStats.ApiResponseTransferMonthStatusFailed
 	// ToProtoResponseTransferYearStatusFailed maps yearly failed transfers to a protobuf response.
-	ToProtoResponseTransferYearStatusFailed(status string, message string, pbResponse []*response.TransferResponseYearStatusFailed) *pb.ApiResponseTransferYearStatusFailed
+	ToProtoResponseTransferYearStatusFailed(status string, message string, pbResponse []*response.TransferResponseYearStatusFailed) *pbStats.ApiResponseTransferYearStatusFailed
 }
 
 type TransferStatsAmountProtoMapper interface {
 	// ToProtoResponseTransferMonthAmount maps monthly transfer amounts to a protobuf response.
-	ToProtoResponseTransferMonthAmount(status string, message string, pbResponse []*response.TransferMonthAmountResponse) *pb.ApiResponseTransferMonthAmount
+	ToProtoResponseTransferMonthAmount(status string, message string, pbResponse []*response.TransferMonthAmountResponse) *pbStats.ApiResponseTransferMonthAmount
 
 	// ToProtoResponseTransferYearAmount maps yearly transfer amounts to a protobuf response.
-	ToProtoResponseTransferYearAmount(status string, message string, pbResponse []*response.TransferYearAmountResponse) *pb.ApiResponseTransferYearAmount
+	ToProtoResponseTransferYearAmount(status string, message string, pbResponse []*response.TransferYearAmountResponse) *pbStats.ApiResponseTransferYearAmount
 }

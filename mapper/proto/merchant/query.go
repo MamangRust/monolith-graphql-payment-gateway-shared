@@ -1,8 +1,8 @@
 package merchantprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -28,10 +28,10 @@ func NewMerchantQueryProtoMapper() MerchantQueryProtoMapper {
 //	A pointer to ApiResponsePaginationMerchant containing the status, message, merchant data, and pagination data.
 func (m *merchantQueryProtoMapper) ToProtoResponsePaginationMerchant(pagination *pbhelpers.PaginationMeta, status string, message string, merchants []*response.MerchantResponse) *pb.ApiResponsePaginationMerchant {
 	return &pb.ApiResponsePaginationMerchant{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapMerchantResponses(merchants),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapMerchantResponses(merchants),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -41,10 +41,10 @@ func (m *merchantQueryProtoMapper) ToProtoResponsePaginationMerchant(pagination 
 // It is used to generate the response for the MerchantService.ListDeletedMerchant rpc method.
 func (m *merchantQueryProtoMapper) ToProtoResponsePaginationMerchantDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, merchants []*response.MerchantResponseDeleteAt) *pb.ApiResponsePaginationMerchantDeleteAt {
 	return &pb.ApiResponsePaginationMerchantDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapMerchantResponsesDeleteAt(merchants),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapMerchantResponsesDeleteAt(merchants),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

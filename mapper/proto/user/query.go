@@ -1,8 +1,8 @@
 package userprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/user"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -47,10 +47,10 @@ func (u *userQueryProtoMapper) ToProtoResponseUser(status string, message string
 //	A pointer to ApiResponsePaginationUserDeleteAt containing the status, message, user data, and pagination data.
 func (u *userQueryProtoMapper) ToProtoResponsePaginationUserDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, users []*response.UserResponseDeleteAt) *pb.ApiResponsePaginationUserDeleteAt {
 	return &pb.ApiResponsePaginationUserDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       u.mapResponsesUserDeleteAt(users),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           u.mapResponsesUserDeleteAt(users),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -68,10 +68,10 @@ func (u *userQueryProtoMapper) ToProtoResponsePaginationUserDeleteAt(pagination 
 //	A pointer to ApiResponsePaginationUser containing the status, message, user data, and pagination data.
 func (u *userQueryProtoMapper) ToProtoResponsePaginationUser(pagination *pbhelpers.PaginationMeta, status string, message string, users []*response.UserResponse) *pb.ApiResponsePaginationUser {
 	return &pb.ApiResponsePaginationUser{
-		Status:     status,
-		Message:    message,
-		Data:       u.mapResponsesUser(users),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           u.mapResponsesUser(users),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

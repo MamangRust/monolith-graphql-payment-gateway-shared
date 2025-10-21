@@ -1,7 +1,7 @@
 package response
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/errors"
 	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc/codes"

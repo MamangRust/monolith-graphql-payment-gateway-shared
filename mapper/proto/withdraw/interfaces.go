@@ -1,8 +1,9 @@
 package withdrawprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/withdraw"
+	pbStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/withdraw/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -35,22 +36,22 @@ type WithdrawCommandProtoMapper interface {
 
 type WithdrawStatsStatusProtoMapper interface {
 	// ToProtoResponseWithdrawMonthStatusSuccess maps monthly successful withdraws to a protobuf response.
-	ToProtoResponseWithdrawMonthStatusSuccess(status string, message string, pbResponse []*response.WithdrawResponseMonthStatusSuccess) *pb.ApiResponseWithdrawMonthStatusSuccess
+	ToProtoResponseWithdrawMonthStatusSuccess(status string, message string, pbResponse []*response.WithdrawResponseMonthStatusSuccess) *pbStats.ApiResponseWithdrawMonthStatusSuccess
 
 	// ToProtoResponseWithdrawYearStatusSuccess maps yearly successful withdraws to a protobuf response.
-	ToProtoResponseWithdrawYearStatusSuccess(status string, message string, pbResponse []*response.WithdrawResponseYearStatusSuccess) *pb.ApiResponseWithdrawYearStatusSuccess
+	ToProtoResponseWithdrawYearStatusSuccess(status string, message string, pbResponse []*response.WithdrawResponseYearStatusSuccess) *pbStats.ApiResponseWithdrawYearStatusSuccess
 
 	// ToProtoResponseWithdrawMonthStatusFailed maps monthly failed withdraws to a protobuf response.
-	ToProtoResponseWithdrawMonthStatusFailed(status string, message string, pbResponse []*response.WithdrawResponseMonthStatusFailed) *pb.ApiResponseWithdrawMonthStatusFailed
+	ToProtoResponseWithdrawMonthStatusFailed(status string, message string, pbResponse []*response.WithdrawResponseMonthStatusFailed) *pbStats.ApiResponseWithdrawMonthStatusFailed
 
 	// ToProtoResponseWithdrawYearStatusFailed maps yearly failed withdraws to a protobuf response.
-	ToProtoResponseWithdrawYearStatusFailed(status string, message string, pbResponse []*response.WithdrawResponseYearStatusFailed) *pb.ApiResponseWithdrawYearStatusFailed
+	ToProtoResponseWithdrawYearStatusFailed(status string, message string, pbResponse []*response.WithdrawResponseYearStatusFailed) *pbStats.ApiResponseWithdrawYearStatusFailed
 }
 
 type WithdrawaStatsAmountProtoMapper interface {
 	// ToProtoResponseWithdrawMonthAmount maps monthly withdraw amounts to a protobuf response.
-	ToProtoResponseWithdrawMonthAmount(status string, message string, pbResponse []*response.WithdrawMonthlyAmountResponse) *pb.ApiResponseWithdrawMonthAmount
+	ToProtoResponseWithdrawMonthAmount(status string, message string, pbResponse []*response.WithdrawMonthlyAmountResponse) *pbStats.ApiResponseWithdrawMonthAmount
 
 	// ToProtoResponseWithdrawYearAmount maps yearly withdraw amounts to a protobuf response.
-	ToProtoResponseWithdrawYearAmount(status string, message string, pbResponse []*response.WithdrawYearlyAmountResponse) *pb.ApiResponseWithdrawYearAmount
+	ToProtoResponseWithdrawYearAmount(status string, message string, pbResponse []*response.WithdrawYearlyAmountResponse) *pbStats.ApiResponseWithdrawYearAmount
 }

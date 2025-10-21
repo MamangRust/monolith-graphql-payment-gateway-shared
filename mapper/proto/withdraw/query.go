@@ -1,8 +1,8 @@
 package withdrawprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/withdraw"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -48,10 +48,10 @@ func (m *withdrawQueryProtoMapper) ToProtoResponseWithdraw(status string, messag
 //	A pointer to an ApiResponsePaginationWithdraw containing the mapped data.
 func (m *withdrawQueryProtoMapper) ToProtoResponsePaginationWithdraw(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.WithdrawResponse) *pb.ApiResponsePaginationWithdraw {
 	return &pb.ApiResponsePaginationWithdraw{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesWithdrawal(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesWithdrawal(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -69,10 +69,10 @@ func (m *withdrawQueryProtoMapper) ToProtoResponsePaginationWithdraw(pagination 
 //	A pointer to an ApiResponsePaginationWithdrawDeleteAt containing the mapped data.
 func (m *withdrawQueryProtoMapper) ToProtoResponsePaginationWithdrawDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.WithdrawResponseDeleteAt) *pb.ApiResponsePaginationWithdrawDeleteAt {
 	return &pb.ApiResponsePaginationWithdrawDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       m.mapResponsesWithdrawalDeleteAt(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           m.mapResponsesWithdrawalDeleteAt(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

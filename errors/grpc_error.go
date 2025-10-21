@@ -3,7 +3,7 @@ package errors
 import (
 	"encoding/json"
 
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
 )
 
 // GrpcErrorToJson takes a pointer to a gRPC ErrorResponse and returns a string containing

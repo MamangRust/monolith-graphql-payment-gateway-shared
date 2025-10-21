@@ -1,7 +1,7 @@
 package userprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/user"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )

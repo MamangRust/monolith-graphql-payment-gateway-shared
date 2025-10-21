@@ -1,7 +1,7 @@
 package cardprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/card"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 

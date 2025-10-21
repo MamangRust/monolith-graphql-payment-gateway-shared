@@ -1,8 +1,8 @@
 package cardprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/card"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	helpersproto "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto/helpers"
@@ -31,10 +31,10 @@ func (s *cardQueryProtoMapper) ToProtoResponseCard(status string, message string
 // It is used to generate the response for the CardService.ListCard rpc method.
 func (s *cardQueryProtoMapper) ToProtoResponsePaginationCard(pagination *pbhelpers.PaginationMeta, status string, message string, cards []*response.CardResponse) *pb.ApiResponsePaginationCard {
 	return &pb.ApiResponsePaginationCard{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapCardResponses(cards),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapCardResponses(cards),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -44,10 +44,10 @@ func (s *cardQueryProtoMapper) ToProtoResponsePaginationCard(pagination *pbhelpe
 // It is used to generate the response for the CardService.ListDeletedCard rpc method.
 func (s *cardQueryProtoMapper) ToProtoResponsePaginationCardDeletedAt(pagination *pbhelpers.PaginationMeta, status string, message string, cards []*response.CardResponseDeleteAt) *pb.ApiResponsePaginationCardDeleteAt {
 	return &pb.ApiResponsePaginationCardDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapCardResponsesDeleteAt(cards),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapCardResponsesDeleteAt(cards),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

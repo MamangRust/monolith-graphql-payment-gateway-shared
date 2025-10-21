@@ -1,8 +1,9 @@
 package topupprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/topup"
+	pbStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/topup/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -36,31 +37,31 @@ type TopupCommandProtoMapper interface {
 
 type TopupStatsStatusProtoMapper interface {
 	// ToProtoResponseTopupMonthStatusSuccess maps monthly successful top-ups to a protobuf response.
-	ToProtoResponseTopupMonthStatusSuccess(status string, message string, s []*response.TopupResponseMonthStatusSuccess) *pb.ApiResponseTopupMonthStatusSuccess
+	ToProtoResponseTopupMonthStatusSuccess(status string, message string, s []*response.TopupResponseMonthStatusSuccess) *pbStats.ApiResponseTopupMonthStatusSuccess
 
 	// ToProtoResponseTopupYearStatusSuccess maps yearly successful top-ups to a protobuf response.
-	ToProtoResponseTopupYearStatusSuccess(status string, message string, s []*response.TopupResponseYearStatusSuccess) *pb.ApiResponseTopupYearStatusSuccess
+	ToProtoResponseTopupYearStatusSuccess(status string, message string, s []*response.TopupResponseYearStatusSuccess) *pbStats.ApiResponseTopupYearStatusSuccess
 
 	// ToProtoResponseTopupMonthStatusFailed maps monthly failed top-ups to a protobuf response.
-	ToProtoResponseTopupMonthStatusFailed(status string, message string, s []*response.TopupResponseMonthStatusFailed) *pb.ApiResponseTopupMonthStatusFailed
+	ToProtoResponseTopupMonthStatusFailed(status string, message string, s []*response.TopupResponseMonthStatusFailed) *pbStats.ApiResponseTopupMonthStatusFailed
 
 	// ToProtoResponseTopupYearStatusFailed maps yearly failed top-ups to a protobuf response.
-	ToProtoResponseTopupYearStatusFailed(status string, message string, s []*response.TopupResponseYearStatusFailed) *pb.ApiResponseTopupYearStatusFailed
+	ToProtoResponseTopupYearStatusFailed(status string, message string, s []*response.TopupResponseYearStatusFailed) *pbStats.ApiResponseTopupYearStatusFailed
 }
 
 type TopupStatsMethodProtoMapper interface {
 	// ToProtoResponseTopupMonthMethod maps monthly top-up methods to a protobuf response.
-	ToProtoResponseTopupMonthMethod(status string, message string, s []*response.TopupMonthMethodResponse) *pb.ApiResponseTopupMonthMethod
+	ToProtoResponseTopupMonthMethod(status string, message string, s []*response.TopupMonthMethodResponse) *pbStats.ApiResponseTopupMonthMethod
 
 	// ToProtoResponseTopupYearMethod maps yearly top-up methods to a protobuf response.
-	ToProtoResponseTopupYearMethod(status string, message string, s []*response.TopupYearlyMethodResponse) *pb.ApiResponseTopupYearMethod
+	ToProtoResponseTopupYearMethod(status string, message string, s []*response.TopupYearlyMethodResponse) *pbStats.ApiResponseTopupYearMethod
 }
 
 // TopupStatsAmountProtoMapper maps top-up amounts to a protobuf response.
 type TopupStatsAmountProtoMapper interface {
 	// ToProtoResponseTopupMonthAmount maps monthly top-up amounts to a protobuf response.
-	ToProtoResponseTopupMonthAmount(status string, message string, s []*response.TopupMonthAmountResponse) *pb.ApiResponseTopupMonthAmount
+	ToProtoResponseTopupMonthAmount(status string, message string, s []*response.TopupMonthAmountResponse) *pbStats.ApiResponseTopupMonthAmount
 
 	// ToProtoResponseTopupYearAmount maps yearly top-up amounts to a protobuf response.
-	ToProtoResponseTopupYearAmount(status string, message string, s []*response.TopupYearlyAmountResponse) *pb.ApiResponseTopupYearAmount
+	ToProtoResponseTopupYearAmount(status string, message string, s []*response.TopupYearlyAmountResponse) *pbStats.ApiResponseTopupYearAmount
 }

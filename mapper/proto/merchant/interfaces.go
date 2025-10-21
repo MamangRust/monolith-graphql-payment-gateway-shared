@@ -1,8 +1,9 @@
 package merchantprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant"
+	pbMerchantStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/merchant/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -43,25 +44,25 @@ type MerchantTransactionProtoMapper interface {
 
 type MerchantStatsMethodProtoMapper interface {
 	// ToProtoResponseMonthlyPaymentMethods maps monthly payment method statistics to a protobuf message.
-	ToProtoResponseMonthlyPaymentMethods(status string, message string, ms []*response.MerchantResponseMonthlyPaymentMethod) *pb.ApiResponseMerchantMonthlyPaymentMethod
+	ToProtoResponseMonthlyPaymentMethods(status string, message string, ms []*response.MerchantResponseMonthlyPaymentMethod) *pbMerchantStats.ApiResponseMerchantMonthlyPaymentMethod
 
 	// ToProtoResponseYearlyPaymentMethods maps yearly payment method statistics to a protobuf message.
-	ToProtoResponseYearlyPaymentMethods(status string, message string, ms []*response.MerchantResponseYearlyPaymentMethod) *pb.ApiResponseMerchantYearlyPaymentMethod
+	ToProtoResponseYearlyPaymentMethods(status string, message string, ms []*response.MerchantResponseYearlyPaymentMethod) *pbMerchantStats.ApiResponseMerchantYearlyPaymentMethod
 }
 
 type MerchantStatsAmountProtoMapper interface {
 	// ToProtoResponseMonthlyAmounts maps monthly merchant transaction amounts to a protobuf message.
-	ToProtoResponseMonthlyAmounts(status string, message string, ms []*response.MerchantResponseMonthlyAmount) *pb.ApiResponseMerchantMonthlyAmount
+	ToProtoResponseMonthlyAmounts(status string, message string, ms []*response.MerchantResponseMonthlyAmount) *pbMerchantStats.ApiResponseMerchantMonthlyAmount
 
 	// ToProtoResponseYearlyAmounts maps yearly merchant transaction amounts to a protobuf message.
-	ToProtoResponseYearlyAmounts(status string, message string, ms []*response.MerchantResponseYearlyAmount) *pb.ApiResponseMerchantYearlyAmount
+	ToProtoResponseYearlyAmounts(status string, message string, ms []*response.MerchantResponseYearlyAmount) *pbMerchantStats.ApiResponseMerchantYearlyAmount
 }
 
 // MerchantStatsTotalAmountProtoMapper maps total transaction amounts across all merchants to a protobuf message.
 type MerchantStatsTotalAmountProtoMapper interface {
 	// ToProtoResponseMonthlyTotalAmounts maps monthly total transaction amounts across all merchants to a protobuf message.
-	ToProtoResponseMonthlyTotalAmounts(status string, message string, ms []*response.MerchantResponseMonthlyTotalAmount) *pb.ApiResponseMerchantMonthlyTotalAmount
+	ToProtoResponseMonthlyTotalAmounts(status string, message string, ms []*response.MerchantResponseMonthlyTotalAmount) *pbMerchantStats.ApiResponseMerchantMonthlyTotalAmount
 
 	// ToProtoResponseYearlyTotalAmounts maps yearly total transaction amounts across all merchants to a protobuf message.
-	ToProtoResponseYearlyTotalAmounts(status string, message string, ms []*response.MerchantResponseYearlyTotalAmount) *pb.ApiResponseMerchantYearlyTotalAmount
+	ToProtoResponseYearlyTotalAmounts(status string, message string, ms []*response.MerchantResponseYearlyTotalAmount) *pbMerchantStats.ApiResponseMerchantYearlyTotalAmount
 }

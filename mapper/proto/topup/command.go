@@ -1,7 +1,7 @@
 package topupprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/topup"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	helpersproto "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto/helpers"
 )

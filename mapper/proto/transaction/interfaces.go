@@ -1,8 +1,9 @@
 package transactionprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transaction"
+	pbStats "github.com/MamangRust/monolith-graphql-payment-gateway-pb/transaction/stats"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
@@ -38,33 +39,33 @@ type TransactionCommandProtoMapper interface {
 
 type TransactionStatsStatusProtoMapper interface {
 	// ToProtoResponseTransactionMonthStatusSuccess maps monthly successful transactions to a protobuf response.
-	ToProtoResponseTransactionMonthStatusSuccess(status string, message string, pbResponse []*response.TransactionResponseMonthStatusSuccess) *pb.ApiResponseTransactionMonthStatusSuccess
+	ToProtoResponseTransactionMonthStatusSuccess(status string, message string, pbResponse []*response.TransactionResponseMonthStatusSuccess) *pbStats.ApiResponseTransactionMonthStatusSuccess
 
 	// ToProtoResponseTransactionYearStatusSuccess maps yearly successful transactions to a protobuf response.
-	ToProtoResponseTransactionYearStatusSuccess(status string, message string, pbResponse []*response.TransactionResponseYearStatusSuccess) *pb.ApiResponseTransactionYearStatusSuccess
+	ToProtoResponseTransactionYearStatusSuccess(status string, message string, pbResponse []*response.TransactionResponseYearStatusSuccess) *pbStats.ApiResponseTransactionYearStatusSuccess
 
 	// ToProtoResponseTransactionMonthStatusFailed maps monthly failed transactions to a protobuf response.
-	ToProtoResponseTransactionMonthStatusFailed(status string, message string, pbResponse []*response.TransactionResponseMonthStatusFailed) *pb.ApiResponseTransactionMonthStatusFailed
+	ToProtoResponseTransactionMonthStatusFailed(status string, message string, pbResponse []*response.TransactionResponseMonthStatusFailed) *pbStats.ApiResponseTransactionMonthStatusFailed
 
 	// ToProtoResponseTransactionYearStatusFailed maps yearly failed transactions to a protobuf response.
-	ToProtoResponseTransactionYearStatusFailed(status string, message string, pbResponse []*response.TransactionResponseYearStatusFailed) *pb.ApiResponseTransactionYearStatusFailed
+	ToProtoResponseTransactionYearStatusFailed(status string, message string, pbResponse []*response.TransactionResponseYearStatusFailed) *pbStats.ApiResponseTransactionYearStatusFailed
 }
 
 // TransactionStatsAmountProtoMapper maps transaction amounts to a protobuf response.
 type TransactionStatsAmountProtoMapper interface {
 	// ToProtoResponseTransactionMonthAmount maps monthly transaction amounts to a protobuf response.
-	ToProtoResponseTransactionMonthAmount(status string, message string, pbResponse []*response.TransactionMonthAmountResponse) *pb.ApiResponseTransactionMonthAmount
+	ToProtoResponseTransactionMonthAmount(status string, message string, pbResponse []*response.TransactionMonthAmountResponse) *pbStats.ApiResponseTransactionMonthAmount
 
 	// ToProtoResponseTransactionYearAmount maps yearly transaction amounts to a protobuf response.
-	ToProtoResponseTransactionYearAmount(status string, message string, pbResponse []*response.TransactionYearlyAmountResponse) *pb.ApiResponseTransactionYearAmount
+	ToProtoResponseTransactionYearAmount(status string, message string, pbResponse []*response.TransactionYearlyAmountResponse) *pbStats.ApiResponseTransactionYearAmount
 }
 
 // TransactionStatsMethodProtoMapper maps transaction methods to a protobuf response.
 type TransactionStatsMethodProtoMapper interface {
 
 	// ToProtoResponseTransactionMonthMethod maps monthly transaction methods to a protobuf response.
-	ToProtoResponseTransactionMonthMethod(status string, message string, pbResponse []*response.TransactionMonthMethodResponse) *pb.ApiResponseTransactionMonthMethod
+	ToProtoResponseTransactionMonthMethod(status string, message string, pbResponse []*response.TransactionMonthMethodResponse) *pbStats.ApiResponseTransactionMonthMethod
 
 	// ToProtoResponseTransactionYearMethod maps yearly transaction methods to a protobuf response.
-	ToProtoResponseTransactionYearMethod(status string, message string, pbResponse []*response.TransactionYearMethodResponse) *pb.ApiResponseTransactionYearMethod
+	ToProtoResponseTransactionYearMethod(status string, message string, pbResponse []*response.TransactionYearMethodResponse) *pbStats.ApiResponseTransactionYearMethod
 }

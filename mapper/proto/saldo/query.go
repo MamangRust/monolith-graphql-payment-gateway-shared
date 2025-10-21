@@ -1,8 +1,8 @@
 package saldoprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/saldo"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -51,10 +51,10 @@ func (s *saldoQueryProtoMapper) ToProtoResponseSaldo(status string, message stri
 //	A pointer to an ApiResponsePaginationSaldo containing the status, message, data, and pagination data.
 func (s *saldoQueryProtoMapper) ToProtoResponsePaginationSaldo(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.SaldoResponse) *pb.ApiResponsePaginationSaldo {
 	return &pb.ApiResponsePaginationSaldo{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapResponsesSaldo(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapResponsesSaldo(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -75,10 +75,10 @@ func (s *saldoQueryProtoMapper) ToProtoResponsePaginationSaldo(pagination *pbhel
 //	A pointer to ApiResponsePaginationSaldoDeleteAt containing the status, message, saldo data, and pagination data.
 func (s *saldoQueryProtoMapper) ToProtoResponsePaginationSaldoDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.SaldoResponseDeleteAt) *pb.ApiResponsePaginationSaldoDeleteAt {
 	return &pb.ApiResponsePaginationSaldoDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapResponsesSaldoDeleteAt(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapResponsesSaldoDeleteAt(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

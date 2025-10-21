@@ -1,8 +1,8 @@
 package roleprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/role"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -62,10 +62,10 @@ func (s *roleQueryProtoMapper) ToProtoResponsesRole(status string, message strin
 //   - A pointer to a pb.ApiResponsePaginationRole containing the mapped data.
 func (s *roleQueryProtoMapper) ToProtoResponsePaginationRole(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.RoleResponse) *pb.ApiResponsePaginationRole {
 	return &pb.ApiResponsePaginationRole{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapResponsesRole(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapResponsesRole(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -81,10 +81,10 @@ func (s *roleQueryProtoMapper) ToProtoResponsePaginationRole(pagination *pbhelpe
 //   - A pointer to a pb.ApiResponsePaginationRoleDeleteAt containing the mapped data.
 func (s *roleQueryProtoMapper) ToProtoResponsePaginationRoleDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, pbResponse []*response.RoleResponseDeleteAt) *pb.ApiResponsePaginationRoleDeleteAt {
 	return &pb.ApiResponsePaginationRoleDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       s.mapResponsesRoleDeleteAt(pbResponse),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           s.mapResponsesRoleDeleteAt(pbResponse),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

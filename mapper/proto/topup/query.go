@@ -1,8 +1,8 @@
 package topupprotomapper
 
 import (
-	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbhelpers "github.com/MamangRust/monolith-graphql-payment-gateway-pb/common"
+	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb/topup"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 	protomapper "github.com/MamangRust/monolith-graphql-payment-gateway-shared/mapper/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
@@ -46,10 +46,10 @@ func (t *topupQueryProtoMapper) ToProtoResponseTopup(status string, message stri
 //	A pointer to ApiResponsePaginationTopup containing the status, message, top-up data, and pagination data.
 func (t *topupQueryProtoMapper) ToProtoResponsePaginationTopup(pagination *pbhelpers.PaginationMeta, status string, message string, s []*response.TopupResponse) *pb.ApiResponsePaginationTopup {
 	return &pb.ApiResponsePaginationTopup{
-		Status:     status,
-		Message:    message,
-		Data:       t.mapResponsesTopup(s),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           t.mapResponsesTopup(s),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 
@@ -66,10 +66,10 @@ func (t *topupQueryProtoMapper) ToProtoResponsePaginationTopup(pagination *pbhel
 //	A pointer to ApiResponsePaginationTopupDeleteAt containing the status, message, top-up data, and pagination data.
 func (t *topupQueryProtoMapper) ToProtoResponsePaginationTopupDeleteAt(pagination *pbhelpers.PaginationMeta, status string, message string, s []*response.TopupResponseDeleteAt) *pb.ApiResponsePaginationTopupDeleteAt {
 	return &pb.ApiResponsePaginationTopupDeleteAt{
-		Status:     status,
-		Message:    message,
-		Data:       t.mapResponsesTopupDeleteAt(s),
-		Pagination: protomapper.MapPaginationMeta(pagination),
+		Status:         status,
+		Message:        message,
+		Data:           t.mapResponsesTopupDeleteAt(s),
+		PaginationMeta: protomapper.MapPaginationMeta(pagination),
 	}
 }
 

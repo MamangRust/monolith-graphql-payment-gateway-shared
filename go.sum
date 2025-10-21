@@ -6,6 +6,8 @@ github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.1 h1:FWtaOiZ8cThE
 github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.1/go.mod h1:NiU/sD5Uequa/1EZEFG7l8EuM0jea40fKz+bW2ZoWTc=
 github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.2 h1:LVjIX4K+hECnUHkDkw0p77MJUTdvjWGTXpEhGdjtXP4=
 github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.2/go.mod h1:NiU/sD5Uequa/1EZEFG7l8EuM0jea40fKz+bW2ZoWTc=
+github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.3 h1:XZUXHMVxvPKmXkRNJimHGlfzIfa0oiEyInJxA1gX1BQ=
+github.com/MamangRust/monolith-graphql-payment-gateway-pb v0.1.3/go.mod h1:NiU/sD5Uequa/1EZEFG7l8EuM0jea40fKz+bW2ZoWTc=
 github.com/MamangRust/monolith-graphql-payment-gateway-pkg v0.2.0 h1:hw+q7PlBLoP5/jH2JlyY/tOB96+loT4RyCucoIga0Lc=
 github.com/MamangRust/monolith-graphql-payment-gateway-pkg v0.2.0/go.mod h1:LSFpY9651b0re+HWhaC9Q2d+zegyZrf+FVHpgXN+Tg4=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=

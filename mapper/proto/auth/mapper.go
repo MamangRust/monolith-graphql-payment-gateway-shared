@@ -2,7 +2,7 @@ package authprotomapper
 
 import (
 	pb "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
-	pbuser "github.com/MamangRust/monolith-graphql-payment-gateway-pb"
+	pbuser "github.com/MamangRust/monolith-graphql-payment-gateway-pb/user"
 	"github.com/MamangRust/monolith-graphql-payment-gateway-shared/domain/response"
 )
 
